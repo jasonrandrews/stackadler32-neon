@@ -11,13 +11,23 @@ This package provides an Adler-32 checksum implementation where:
 
 ## Performance Results
 
-The optimized implementation achieves consistent performance advantages over the standard library. The following benchmarks were performed on Arm Neoverse N1 processors:
+The optimized implementation achieves consistent performance advantages over the standard library. Benchmarks were performed on different Arm processors:
+
+### Arm Neoverse N1
 
 | Data Size | NEON Implementation | Standard Library | Improvement  |
 |-----------|---------------------|------------------|--------------|
 | 10KB      | 5,479 ns/op         | 6,733 ns/op      | 18.6% faster |
 | 1MB       | 503,957 ns/op       | 674,823 ns/op    | 25.3% faster |
 | 10MB      | 4,997,849 ns/op     | 6,731,980 ns/op  | 25.8% faster |
+
+### Arm Neoverse V2
+
+| Data Size | NEON Implementation | Standard Library | Improvement  |
+|-----------|---------------------|------------------|--------------|
+| 10KB      | 3,864 ns/op         | 3,836 ns/op      | -0.7% slower |
+| 1MB       | 375,933 ns/op       | 383,252 ns/op    | 1.9% faster  |
+| 10MB      | 3,743,739 ns/op     | 3,839,381 ns/op  | 2.5% faster  |
 
 ## Building
 
